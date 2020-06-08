@@ -11,7 +11,7 @@
 <body>
     <div id="form">
         <input type="number" id="variants" max="20" placeholder="count variants" onchange="selectCount()">
-        <input type="checkbox" id="withNum">
+        <input type="checkbox" id="withNum" checked>
         <label for="withNum">Numbers</label>
         <div>
             <p>
@@ -23,8 +23,8 @@
                 <label for="teamRadio">Team</label>
             </p>
             <p>
-                <input type="radio" id="orderRadio" value="order" name="radio" onchange="orderCheck()">
-                <label for="orderRadio" checked>Order</label>
+                <input type="radio" id="orderRadio" value="order" name="radio" onchange="orderCheck()" checked>
+                <label for="orderRadio">Order</label>
             </p>
         </div>
         <input type="number" max="19" min="1" id="someInput" placeholder="count true variants" disabled onchange="validate('someInput')">
