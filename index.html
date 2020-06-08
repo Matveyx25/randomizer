@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="form">
+        <input type="number" id="variants" max="20" placeholder="count variants" onchange="selectCount()">
+        <input type="checkbox" id="withNum">
+        <label for="withNum">Numbers</label>
+        <div>
+            <p>
+                <input type="radio" id="someRadio" value="some" name="radio" onchange="someCheck()">
+                <label for="someRadio">Some variant</label>
+            </p>
+            <p>
+                <input type="radio" id="teamRadio" value="team" name="radio" onchange="teamCheck()">
+                <label for="teamRadio">Team</label>
+            </p>
+            <p>
+                <input type="radio" id="orderRadio" value="order" name="radio" onchange="orderCheck()">
+                <label for="orderRadio" checked>Order</label>
+            </p>
+        </div>
+        <input type="number" max="19" min="1" id="someInput" placeholder="count true variants" disabled onchange="validate('someInput')">
+        <input type="number" max="10" min="2" id="teamInput" placeholder="count teams" disabled onchange="validate('teamInput')">
+        <div class="container" id="wrap">
+
+        </div>
+        <button onclick="sub()">generate</button>
+        Ответ:<span id="answer"></span>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

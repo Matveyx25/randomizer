@@ -1,0 +1,70 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway' ,  sans-serif;
+    background: #f4f4f4;
+  }
+  input[type=checkbox]{
+    margin-top: 10px;
+  }
+  input[type=number]{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 10px 6px 4px;
+    font: 1em sans-serif;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+  }
+  button{
+    padding: 6px 10px;
+    font: 1em sans-serif;
+    background: #3366FF;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  input:disabled{
+    opacity: 0.5;
+  }
+  button:hover{
+    background: #3366CC;
+  }
+  #form {
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    width: 300px;
+    border: 1px solid #ccc;
+    box-sizing: boder-box;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff;
+    margin-bottom: 100px;
+  }
+  .container input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 10px 6px 4px;
+    font: 1em sans-serif;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+  }
+  #answer{
+      margin-left: 10px;
+      word-wrap: break-word;
+  }
+  input:invalid+span:after {
+    content: 'value is not valid';
+    padding-left: 5px;
+  }
+  
+  input:valid+span:after {
+    content: '✓';
+    padding-left: 5px;
+  }
