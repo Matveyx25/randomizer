@@ -28,6 +28,7 @@ const generateTeam = () => {
     let countInput = document.getElementById('countTeam')
     let out = document.querySelector('.out')
     let countTeam = Math.ceil(namesArr.length / +countInput.value)
+    namesArr.sort(() => Math.random() - 0.5)
     let newArr = colSplit(namesArr , countTeam)
     out.innerHTML = newArr.join(" | ")
 }
