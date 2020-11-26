@@ -110,7 +110,6 @@ let sub = () => {
     let newArr = colSplit(arr , countTeam)
     answer.innerHTML = newArr.join(" | ")
     console.log(newArr)
-    debugger
   }
   return false
 }
