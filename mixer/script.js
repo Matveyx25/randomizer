@@ -22,6 +22,7 @@ const getNames = () => {
         }
     })
     area.value = namesArr
+    document.querySelector('.count-value').innerHTML = namesArr.length
 }
 
 const generateTeam = () => {
@@ -30,5 +31,8 @@ const generateTeam = () => {
     let countTeam = Math.ceil(namesArr.length / +countInput.value)
     namesArr.sort(() => Math.random() - 0.5)
     let newArr = colSplit(namesArr , countTeam)
+    for(let i = 0; i < newArr.length; i++) {
+        newArr[i] = newArr[i].join(', ')
+    }
     out.innerHTML = newArr.join(" | ")
 }

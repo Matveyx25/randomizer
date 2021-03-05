@@ -120,6 +120,22 @@ body{
     background: rgb(22, 22, 22);
     border-color: #000;
     color: #fff;
+    position: relative;
+  }
+  .mixer .textarea{
+    position: relative;
+    height: fit-content;
+    width: 100%;
+  }
+  .mixer .count-value{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fff;
+    opacity: 0.2;
+    display: block;
   }
   .mixer #form::before{
     content: "";
