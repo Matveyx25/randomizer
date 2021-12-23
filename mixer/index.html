@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>MIXERrand</title>
+    <title>MIXER</title>
 </head>
 <body>
     <div class="mixer">
        <div id="form">
-        <img src="./photo_2020-11-26_16.30.57-removebg-preview.png" alt="" class="logo">
+        <a href="../index.html" class="logout">
+            <img src="./vuesax/linear/logout.svg" alt="">
+        </a>
+        <img src="./logo.svg" alt="" class="logo">
         <input type="number" id="countTeam" placeholder="count teams"/>
         <div class="textarea">
             <textarea id="area" placeholder="Some text"></textarea>
@@ -18,7 +21,10 @@
         <button class="area-btn" onclick="getNames()">get names</button>
         <button class="area-btn" onclick="generateTeam()">generate</button>
         <div class="answer">Ответ: <span class="out"></span></div>
-        <a href="../index.html">to home</a>
+        <a href="#" class="clipboard" onclick="copy()">
+            <img src="./vuesax/linear/copy.svg" alt="">
+        </a>
+        
     </div> 
     </div>
     
