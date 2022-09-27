@@ -69,7 +69,8 @@ const closeModal = (el) => {
 
 const copy = () => {
     var copyText = document.querySelector('.modal-clipboard > .modal-body > .text-area')
-    navigator.clipboard.writeText(copyText.innerHTML).then(() => {
+    let text = copyText.innerHTML.replace(/<br\s*[\/]?>/gi, "\n");
+    navigator.clipboard.writeText(text).then(() => {
         const range = document.createRange();
         range.selectNode(copyText);
 
