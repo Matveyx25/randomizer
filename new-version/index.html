@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>MIXER</title>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-body">
+            <a href="#" class="close-btn" onclick="closeModal(this)">x</a>
+            <pre class="text-area"></pre>
+            <a href="#" class="clipboard" onclick="copy()">
+                <img src="./copy.svg" alt="">
+            </a>
+            <div class="popup">
+                <span>Текст скопирован</span>
+            </div>
+        </div>
+    </div>
+    <div class="new-randomizer__container">
+        <div class="new-randomizer__wrapper">
+            <div class="new-randomizer__forms-group">
+                <div class="form-wrapper" id="form1">
+                    <div class="input-with-delete">
+                        <input type="text" id="name-input" placeholder="name"/>   
+                    </div>
+                    <textarea placeholder="some text" id="message-area"></textarea>
+                </div> 
+            </div>
+            <button class="add-btn" onclick="addBlock(event)">+ add member</button>
+            <button class="area-btn" onclick="generateTeam()">generate</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

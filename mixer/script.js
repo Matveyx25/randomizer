@@ -1,11 +1,22 @@
 let namesArr = []
 
-let colSplit = (input, size) => {
-    for (var x, i = 0, c = -1, l = input.length, n = []; i < l; i++) {
-        (x = i % size) ? n[c][x] = input[i] : n[++c] = [input[i]];
+const generateTeams = (players, numTeams) => {
+    var tempArray = [];
+    tempArray = players.slice();
+
+    var arrayLength = tempArray.length;
+    var playerPerTeam = 
+    Math.floor(tempArray.length/numTeams);
+    var results = [];
+    while (results.length < numTeams ){
+       results.push(tempArray.splice(0, playerPerTeam));
     }
-    return n;
+    if(tempArray.length){
+    results[results.length-1]=[...results[results.length-1],...tempArray]
+    }
+    return results;
 }
+
 
 const getNames = () => {
     let area = document.getElementById('area')
@@ -39,13 +50,6 @@ const generateTeam = () => {
     let newArr = colSplit(namesArr , countTeam)
     for(let i = 0; i < newArr.length; i++) {
         newArr[i] = newArr[i].join(', ')
-    }
-    if(newArr.length%2 != 0) {
-        const ln = newArr.length
-        newArr[ln - 1] = newArr[ln - 1] + ', '
-        newArr[ln - 2] = newArr[ln - 1].concat(newArr[ln - 2])
-        newArr.pop()
-        // newArr[ln - 1].join(', ')
     }
 
     out.innerHTML = newArr.join(" | ")

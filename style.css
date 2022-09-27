@@ -19,7 +19,7 @@ body{
   input[type=checkbox]{
     margin-top: 10px;
   }
-  input[type=number]{
+  input[type=number], input[type=text]{
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -175,6 +175,31 @@ body{
   .clipboard img{
     width: 15px;
   }
+  .popup{
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20px;
+    overflow: hidden;
+  }
+  @keyframes show{
+    0%{transform: translateY(100%); opacity: 0;}
+    30%{transform: translateY(0); opacity: 1;}
+    70%{transform: translateY(0); opacity: 1;}
+    100%{transform: translateY(100%); opacity: 0;}
+  }
+  .popup span{
+    display: block;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  .popup.active span{
+    animation: 4s show ease-in-out;
+  }
   .logout{
     text-decoration: none;
     color: #fff;
@@ -191,3 +216,118 @@ body{
   .logout img{
     width: 15px;
   }
+  .new-randomizer__container{
+    width: 100%;
+    height: 100%;
+    background: #353535;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .new-randomizer__wrapper{
+      padding-top: 20px;
+      margin: 0 auto;
+      background: rgb(36, 36, 36);
+      border: none;
+      color: #fff;
+      display: block;
+      margin: auto;
+      margin-top: 100px;
+      max-width: 300px;
+      width: 100%;
+      box-sizing: boder-box;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+  }
+  .new-randomizer__wrapper .form-wrapper textarea{
+      max-height: 100px;
+      background: rgb(22, 22, 22);
+      border-color: #000;
+      color: #fff;
+      position: relative;
+  }
+  .new-randomizer__wrapper .form-wrapper input{
+      background: rgb(22, 22, 22);
+      border-color: #000;
+      color: #fff;
+      position: relative;
+  }
+  .add-btn{
+    width: 100%;
+    border-radius: 100px;
+    border: 2px dashed rgba(255, 255, 255, 0.445);
+    background: none;
+    color:rgba(255, 255, 255, 0.445);
+    margin-top: 20px;
+  }
+  .form-wrapper:not(:last-child){
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .add-btn:hover{
+    background: none;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    color:rgba(255, 255, 255, 0.2);
+  }
+  .input-with-delete{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .input-with-delete input{
+    margin-top: 0;
+  }
+  .trash{
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(22, 22, 22);
+  }
+  .trash img{
+    width: 20px;
+  }
+
+.modal-body{
+  position: relative;
+  margin-top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(36, 36, 36);
+  border: none;
+  color: #fff;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: boder-box;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 100;
+  display: none;
+}
+.modal.active{
+  display: block;
+}
+
+.modal .close-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+}
