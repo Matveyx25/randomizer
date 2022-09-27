@@ -46,7 +46,7 @@ const generateTeam = () => {
     for (var group of allFromGroups) {
         const name = group.querySelector('#name-input').value
         const message = group.querySelector('#message-area').value
-        if(name && message) members.push(name + ':\n' + message + '\n')
+        if(name && message) members.push(name + ':</br>' + message + '</br>')
     }
 
     members.sort(() => Math.random() - 0.5)
@@ -56,7 +56,7 @@ const generateTeam = () => {
     for(let i = 0; i < ln; i++) {
         newArr[i] = newArr[i].join('')
     }
-    const text = newArr.join("------------------\n")
+    const text = newArr.join("------------------</br>")
     if(text){
         document.querySelector('.modal > .modal-body > .text-area').innerHTML = text
     }
