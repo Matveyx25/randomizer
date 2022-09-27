@@ -3,7 +3,7 @@ const wrapper = document.querySelector('.new-randomizer__forms-group')
 let countBlocks = 1;
 
 const addBlock = (event) => {
-    event.preventDefault
+    event?.preventDefault
     const newForm = `<div class="form-wrapper" id="form${countBlocks + 1}">\
                         <div class="input-with-delete">\
                             <input type="text" id="name-input" placeholder="name"/>\
@@ -68,7 +68,7 @@ const closeModal = (el) => {
 }
 
 const copy = () => {
-    var copyText = document.querySelector('.modal > .modal-body > .text-area')
+    var copyText = document.querySelector('.modal-clipboard > .modal-body > .text-area')
     navigator.clipboard.writeText(copyText.innerHTML).then(() => {
         const range = document.createRange();
         range.selectNode(copyText);
@@ -76,9 +76,62 @@ const copy = () => {
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
 
-        document.querySelector('.modal > .modal-body > .popup').classList.add('active')
+        document.querySelector('.modal-clipboard > .modal-body > .popup').classList.add('active')
         setTimeout(() => {
-            document.querySelector('.modal > .modal-body > .popup').classList.remove('active')
+            document.querySelector('.modal-clipboard > .modal-body > .popup').classList.remove('active')
         }, 4000)
     });
+}
+
+const openModal = () => {
+    document.querySelector('.modal-fill').classList.add('active')
+}
+
+const fillAreas = () => {
+    let namesArr = []
+    let messagesArr = []
+
+    const value = document.getElementById('fill-area').value
+    if(value){
+        let nameInArr,
+            name,
+            arr,
+            message = '',
+            counter = 0
+    
+        arr = value.split(/[\s.]+/);
+        arr.forEach((el, index) => {
+            if (el.split('').includes(':')) {
+                nameInArr = el.split('')
+                name = nameInArr.pop()
+                // name = nameInArr[0]
+                // message = nameInArr[1]
+                namesArr.push(nameInArr.join(''))
+                counter++
+                if(message){
+                    messagesArr.push(message)
+                    message = ''
+                }
+            }else if(namesArr.length <= counter){
+                message += el + ' '
+                if(index == arr.length - 1){
+                    messagesArr.push(message)
+                    message = ''
+                }
+            }
+        })
+    }
+
+    document.querySelector('.modal-fill').classList.remove('active')
+
+    for(let i = 1; i < namesArr.length; i++){
+        addBlock()        
+    }
+
+    const groups = document.querySelectorAll('.form-wrapper')
+
+    for (const [index, group] of groups.entries()) {
+        group.querySelector('#name-input').value = namesArr[index]
+        group.querySelector('#message-area').value = messagesArr[index]
+    }
 }

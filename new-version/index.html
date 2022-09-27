@@ -7,7 +7,7 @@
     <title>MIXER</title>
 </head>
 <body>
-    <div class="modal">
+    <div class="modal modal-clipboard">
         <div class="modal-body">
             <a href="#" class="close-btn" onclick="closeModal(this)">x</a>
             <pre class="text-area"></pre>
@@ -17,6 +17,13 @@
             <div class="popup">
                 <span>Текст скопирован</span>
             </div>
+        </div>
+    </div>
+    <div class="modal modal-fill">
+        <div class="modal-body">
+            <a href="#" class="close-btn" onclick="closeModal(this)">x</a>
+            <textarea placeholder="some text" id="fill-area"></textarea>
+            <button class="area-btn" onclick="fillAreas()">fill</button>
         </div>
     </div>
     <div class="new-randomizer__container">
@@ -31,6 +38,7 @@
             </div>
             <button class="add-btn" onclick="addBlock(event)">+ add member</button>
             <button class="area-btn" onclick="generateTeam()">generate</button>
+            <button class="area-btn" onclick="openModal()">fill inputs</button>
         </div>
     </div>
     
