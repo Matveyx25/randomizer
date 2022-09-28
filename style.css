@@ -332,3 +332,7 @@ body{
   color: #fff;
   margin: 0;
 }
+.modal-clipboard .text-area{
+  max-height: 200px;
+  overflow: auto;
+}
